@@ -1,0 +1,11 @@
+%h4
+  Send me a message and I will get back to you as soon as possible
+
+=form_tag email_path do
+  =label_tag :email
+  =text_field_tag :email
+  %br
+  =label_tag :content
+  =text_area_tag :content, '', :rows=>10, :style=>'width:1000px'
+  %br
+  =submit_tag 'SEND'

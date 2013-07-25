@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
-  # GET /users
-  # GET /users.json
+  def send_email
+    UserMailer.contact(params[:email], params[:content])
+    flash[:success] = "Email has been sent"
+    redirect_to show_path('contact')
+  end 
+
   def index
     @users = User.all
   end

@@ -74,7 +74,16 @@ Ezpetsitting::Application.configure do
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
-
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+   address: "smtpout.secureserver.net",
+   port: "80",
+   authentication: :plain,
+   user_name: "info@ddbhosting.org",
+   password: 'Daniel_6050'
+  }
+  config.action_mailer.raise_delivery_errors = true
+  config.active_support.deprecation = :notify
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 end
